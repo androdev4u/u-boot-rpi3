@@ -9,6 +9,8 @@
 #include <command.h>
 #include <asm/system.h>
 
+#ifndef CONFIG_SYS_TIMER_COUNTER
+
 /*
  * Generic timer implementation of get_tbclk()
  */
@@ -51,3 +53,5 @@ unsigned long usec2ticks(unsigned long usec)
 
 	return ticks;
 }
+
+#endif

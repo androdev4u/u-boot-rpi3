@@ -37,7 +37,11 @@ static const struct pl01x_serial_platdata serial_platdata = {
 	.base = 0x20201000,
 #endif
 	.type = TYPE_PL011,
+#ifdef CONFIG_TARGET_RPI_3
+	.clock = 48000000,
+#else
 	.clock = 3000000,
+#endif
 };
 
 U_BOOT_DEVICE(bcm2835_serials) = {
